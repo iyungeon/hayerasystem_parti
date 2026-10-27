@@ -249,7 +249,6 @@
             db.collection("unavailabilities").onSnapshot((snapshot) => {
                 unavailabilities = [];
                 snapshot.forEach((doc) => { unavailabilities.push({ id: doc.id, ...doc.data() }); });
-                loadMySubmission();
             });
 
             document.getElementById('syncStatus').innerText = "🟢 실시간 동기화 활성화됨";
